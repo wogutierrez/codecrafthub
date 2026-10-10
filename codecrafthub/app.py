@@ -3,10 +3,12 @@ import os
 from datetime import datetime, timezone
 
 from flask import Flask, jsonify, request
+from flask_cors import CORS  # Import CORS
 
 
 # Create the Flask application
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
 
 # Store courses.json in the same folder as app.py
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
